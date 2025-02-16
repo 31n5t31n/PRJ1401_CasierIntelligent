@@ -1,0 +1,64 @@
+# Etude des composants
+
+## I. Système de verrouillage
+
+## **1\. Relais**
+
+- **Qu’est-ce-que le relais ?**
+    
+    L’ESP32 a la capacité de commander une LED sans doute. Cependant, pour contrôler un système qui consomme beaucoup électricité, c’est moins evident. Connecter un composant comme une *lampe électrique* qui a un voltage 4 fois supérieure a une LED (3.3V) detruirerait sans doute l’ESP32. C’est là que va intervenir le relais.
+    
+- **A quoi nous servira t-il?**
+    
+    Dans notre cas, le relais est un composant  qui nous servira **d’interrupteur électronique** pour contrôler l’ouverture ou la fermeture du loquet électromagnétique.
+    
+- **Type de relais qu’on utilisera**
+    
+
+Il existe deux types de relais : électromagnétique et statique. Nous, on utilisera un relai électromagnétique avec une alimentation selon le nécessaire pour activer les loquets.
+
+**2\. Loquet**
+
+- **Qu’est-ce-qu’un loquet électromagnétique ?**
+    
+
+Un loquet électromagnétique est un dispositif de verrouillage qui utilise un champ magnétique pour contrôler l’ouverture et la fermeture d’un mécanisme.
+
+- **A quoi nous servira t-il?**
+    
+
+Dans notre projet, il assurera la **fermeture du casier**. De base, il restera fermé et à la reception du courant, il s’actionne (**ouverture**). Ce courant sera envoyé par le relai sous l’impulsion de l’ESP32.
+
+- **Comment fonctionne t-il?**
+    
+    ***Au repos*** : Le loquet est verrouillé car il n’est pas alimenté.
+    
+    ***Déverrouillage*** : L’ESP32 envoie un signal au relais, qui active l’alimentation du loquet.
+    
+    ***Verrouillage automatique*** : Une fois le courant coupé, un ressort interne remet le loquet en position verrouillée.
+    
+
+## II. Système d’affichage
+
+**1\. Écran LCD**
+
+- **Qu’est ce que l’écran LCD**
+    
+
+Un **écran LCD (Liquid Crystal Display)** est un type d'affichage qui utilise des **cristaux liquides** pour afficher du texte ou des images.
+
+- **A quoi nous servira t-il?**
+    
+
+En gros, l’affichage permet de donner des informations à l’utilisateur. Dans notre cas, cela concernera deux points :
+
+    **a) Donner des instructions a l’utilisateur** (exple : “Poser votre carte sur le lecteur”, …)
+
+    **b) Affichage de l’état de la porte du casier** (exple : “Porte ouverte / fermée”, …)
+
+- Adaptateur Écran
+    
+
+L’écran LCD qu’on utilise fonctionne normalement en mode parallèle (avec 6 à 8 fils à connecter). L’adaptateur i2c intervient pour simplifier la connexion. En effet, il réduit le nombre de fils nécessaires à 2.
+
+Donc, on utilise pour réduire le câblage et libère donc des broches de l’ESP32 pour d’autres composants et, il permet aussi de faciliter la programmation.
