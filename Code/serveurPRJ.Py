@@ -1,19 +1,17 @@
-import paho.mqtt.client as mqtt
+import paho.mqtt.client as mqtt  # Bibliotheque pour gerer mqtt
 
-MQTT_BROKER = "172.20.10.9"
-MQTT_TOPIC = "casier/ouverture"
+MQTT_BROKER = "172.20.10.9" # l'IP de mon broker (mon ordi)
+MQTT_TOPIC = "casier/ouverture" # le topic sur lequel je veux publier
 
-# Liste des badges autorisés
+# Base de donnees integree
 badges_autorises = {
-    "A1B2C3D4": "3",   # Badge 1 ouvre le casier 1
-    "12345678": "2",   # Badge 2 ouvre le casier 2
-    "40F1ED56" : "4", 
-    "44F77FA591490" : "1"
+    "40F1ED56" : "2", # Badge NFC
+    "44F77FA591490" : "1" # Ma carte UBS
 }
 
 def on_connect(client, userdata, flags, rc):
-    print("✅ Connecté au broker MQTT !")
-    client.subscribe(MQTT_TOPIC)
+    print("✅ Connecté au broker MQTT !") # Confimrer si on est connecté au broker
+    client.subscribe(MQTT_TOPIC) # On s'abonne à casier/ouverture
 
 def on_message(client, userdata, msg):
     badge_recu = msg.payload.decode()

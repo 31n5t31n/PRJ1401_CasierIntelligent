@@ -3,7 +3,7 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 
-// Définition des broches
+// On defini les broches 
 #define RELAY_PIN 16  // Broche du relais
 #define IRQ_PIN 2     // Broche IRQ (optionnelle)
 #define RESET_PIN 3   // Broche RESET (optionnelle)
