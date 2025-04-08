@@ -12,7 +12,7 @@
 Adafruit_PN532 nfc(IRQ_PIN, RESET_PIN, &Wire);
 
 // Wi-Fi et MQTT
-const char* ssid = "MaamSaaliwu";
+const char* ssid = "MaamSaaliwu";  // Mon Wi-FI 
 const char* password = "xelcom313";
 const char* mqtt_server = "172.20.10.9";
 const char* mqtt_topic = "casier/ouverture";
@@ -88,8 +88,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
             String casier = message.substring(7);
             Serial.println("✅ Accès autorisé, ouverture du casier " + casier);
             ouvrirCasier();
-            casierOuvert = true; // Marque comme ouvert
-            delay(5000);         // Temporisation pour éviter une redétection immédiate
+            casierOuvert = true; // ouvert
+            delay(5000);         // attente pour éviter une redetection immédiate
             casierOuvert = false;
         }
     } else if (message == "REFUS") {
@@ -122,7 +122,7 @@ String badgeValide() {
     return badgeID;
 }
 
-// Ouverture du casier via le relais
+// Ouverture du casier via le relais, on l'ouvre pendant 5s
 void ouvrirCasier() {
     Serial.println("🔓 Ouverture du casier !");
     digitalWrite(RELAY_PIN, HIGH);
