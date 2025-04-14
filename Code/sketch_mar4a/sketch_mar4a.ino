@@ -4,7 +4,9 @@
 #include <PubSubClient.h>
 
 // On defini les broches 
-#define RELAY_PIN 16  // Broche du relais
+#define RELAY_PIN_1 16  // Relais du casier 1
+#define RELAY_PIN_2 17  // Relais du casier 2
+
 #define IRQ_PIN 2     // Broche IRQ (optionnelle)
 #define RESET_PIN 3   // Broche RESET (optionnelle)
 
@@ -24,8 +26,12 @@ String dernierBadge = "";  // Stocke le dernier badge détecté pour éviter les
 
 void setup() {
     Serial.begin(115200);
-    pinMode(RELAY_PIN, OUTPUT);
-    digitalWrite(RELAY_PIN, LOW); // Relais désactivé au départ
+    pinMode(RELAY_PIN_1, OUTPUT);
+    pinMode(RELAY_PIN_2, OUTPUT);
+
+    digitalWrite(RELAY_PIN_1, LOW);
+    digitalWrite(RELAY_PIN_2, LOW);
+
 
     // Connexion WiFi
     WiFi.begin(ssid, password);
@@ -85,17 +91,18 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
     if (message.startsWith("CASIER:")) {
         if (!casierOuvert) {
-            String casier = message.substring(7);
-            Serial.println("✅ Accès autorisé, ouverture du casier " + casier);
-            ouvrirCasier();
-            casierOuvert = true; // ouvert
-            delay(5000);         // attente pour éviter une redetection immédiate
+            int numero = message.substring(7).toInt();  // extrait 1 ou 2
+            Serial.println("✅ Accès autorisé, ouverture du casier " + String(numero));
+            ouvrirCasier(numero);
+            casierOuvert = true;
+            delay(5000);
             casierOuvert = false;
         }
     } else if (message == "REFUS") {
         Serial.println("❌ Accès refusé !");
     }
 }
+
 
 
 // Lecture d'un badge NFC
@@ -123,11 +130,19 @@ String badgeValide() {
 }
 
 // Ouverture du casier via le relais, on l'ouvre pendant 5s
-void ouvrirCasier() {
-    Serial.println("🔓 Ouverture du casier !");
-    digitalWrite(RELAY_PIN, HIGH);
+void ouvrirCasier(int numero) {
+    int pin;
+    if (numero == 1) pin = RELAY_PIN_1;
+    else if (numero == 2) pin = RELAY_PIN_2;
+    else {
+        Serial.println("⚠️ Casier non pris en charge !");
+        return;
+    }
+
+    Serial.println("🔓 Ouverture du casier " + String(numero));
+    digitalWrite(pin, HIGH);
     delay(5000);
-    digitalWrite(RELAY_PIN, LOW);
+    digitalWrite(pin, LOW);
 }
 
 // Vérification de la connexion WiFi et MQTT
