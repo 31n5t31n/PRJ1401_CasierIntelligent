@@ -32,7 +32,8 @@ void setup() {
     digitalWrite(RELAY_PIN_1, LOW);
     digitalWrite(RELAY_PIN_2, LOW);
 
-
+    Serial.print("Stack restante de loopTask : ");
+    Serial.println(uxTaskGetStackHighWaterMark(NULL)); 
     // Connexion WiFi
     WiFi.begin(ssid, password);
     while (WiFi.status() != WL_CONNECTED) {
@@ -40,6 +41,8 @@ void setup() {
         Serial.print(".");
     }
     Serial.println("\n✅ WiFi connecté !");
+    Serial.print("ESP connecte à l'adresse : " );
+    Serial.print(WiFi.localIP());
 
     // Connexion MQTT
     client.setServer(mqtt_server, 1883);
@@ -66,7 +69,7 @@ void setup() {
 
 void reconnect() {
     while (!client.connected()) {
-        Serial.print("🔄 Connexion au broker MQTT...");
+        Serial.print("\n🔄 Connexion au broker MQTT...");
         if (client.connect("ESP32Client")) {
             Serial.println("✅ Connecté !");
             client.subscribe(mqtt_topic);
@@ -169,6 +172,20 @@ void loop() {
         client.publish(mqtt_topic, badgeID.c_str(), false);
         dernierBadge = badgeID;
     }
+    // VERIFICATION MEMOIRE DYNAMIQUE
+
+    //Serial.print("Mémoire Heap disponible : ");
+    //Serial.println(ESP.getFreeHeap());
+
+    // VERIFICATION MEMOIRE FLASH
+   // Serial.print("Taille mémoire flash : ");
+    //Serial.println(ESP.getFlashChipSize());
+
+    // VERIFICATION PILE
+    Serial.print("Stack restante de loopTask : ");
+    Serial.println(uxTaskGetStackHighWaterMark(NULL)); 
+
+
 
     client.loop();
 }

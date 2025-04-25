@@ -7,6 +7,7 @@ MQTT_TOPIC = "casier/ouverture" # le topic sur lequel je veux publier
 badges_autorises = {
     "40F1ED56" : "2", # Badge NFC
     "44F77FA591490" : "1" # Ma carte UBS
+
 }
 
 def on_connect(client, userdata, flags, rc):
@@ -32,4 +33,4 @@ client.on_connect = on_connect
 client.on_message = on_message
 
 client.connect(MQTT_BROKER, 1883, 60)
-client.loop_forever()
+client.loop_forever() #le 60 (en sec) keepalive ....
