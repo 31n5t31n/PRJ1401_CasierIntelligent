@@ -182,8 +182,8 @@ void loop() {
     //Serial.println(ESP.getFlashChipSize());
 
     // VERIFICATION PILE
-    Serial.print("Stack restante de loopTask : ");
-    Serial.println(uxTaskGetStackHighWaterMark(NULL)); 
+    //Serial.print("Stack restante de loopTask : ");
+    //Serial.println(uxTaskGetStackHighWaterMark(NULL)); 
 
 
 
