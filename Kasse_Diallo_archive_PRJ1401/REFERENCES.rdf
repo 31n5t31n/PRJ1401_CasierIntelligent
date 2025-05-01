@@ -1,0 +1,34 @@
+<rdf:RDF
+ xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+ xmlns:z="http://www.zotero.org/namespaces/export#"
+ xmlns:bib="http://purl.org/net/biblio#">
+    <bib:Memo rdf:about="#item_94">
+        <z:itemType>note</z:itemType>
+        <rdf:value>&lt;div data-schema-version=&quot;9&quot;&gt;&lt;h1&gt;REFERENCES&lt;br&gt;&lt;/h1&gt;
+&lt;p&gt;Datasheets&amp;nbsp;ESP32&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Lecteur NFC&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://wiki.dfrobot.com/Gravity:%20I2C%20&amp;amp;%20UART%20NFC%20Module%20SKU:%20DFR0231-H&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://wiki.dfrobot.com/Gravity:%20I2C%20&amp;amp;%20UART%20NFC%20Module%20SKU:%20DFR0231-H&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Loquet Solenoïd&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;a href=&quot;https://esp32io.com/tutorials/esp32-solenoid-lock&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://esp32io.com/tutorials/esp32-solenoid-lock&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;MQTT&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://esp32io.com/tutorials/esp32-mqtt&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://esp32io.com/tutorials/esp32-mqtt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Relais&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://esp32io.com/tutorials/esp32-relay&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://esp32io.com/tutorials/esp32-relay&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RFID/NFC&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://esp32io.com/tutorials/esp32-rfid-nfc&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://esp32io.com/tutorials/esp32-rfid-nfc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Etat de l‘art&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://lecasierfrancais.fr/&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://lecasierfrancais.fr/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.parcelpending.com/fr/&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://www.parcelpending.com/fr/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://ipps.ucsd.edu/services/thetrove/about/index.html&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://ipps.ucsd.edu/services/thetrove/about/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Brochage ESP32&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://duckduckgo.com/?q=brochage+esp32&amp;amp;iax=images&amp;amp;ia=images&amp;amp;iai=http%3A%2F%2Falgo.tn%2Fesp32%2Fimg%2Fpins-carte-esp32.png&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://duckduckgo.com/?q=brochage+esp32&amp;amp;iax=images&amp;amp;ia=images&amp;amp;iai=http%3A%2F%2Falgo.tn%2Fesp32%2Fimg%2Fpins-carte-esp32.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Logo SSI-UBS&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://duckduckgo.com/?q=logo%20ssi%20ubs%20Lorient&amp;amp;ko=-1&amp;amp;ia=images&amp;amp;iax=images&amp;amp;iai=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fubs-png-ubs-faculte-ssi-logo-cmjn-2-250.png&quot; rel=&quot;noopener noreferrer nofollow&quot;&gt;https://duckduckgo.com/?q=logo%20ssi%20ubs%20Lorient&amp;amp;ko=-1&amp;amp;ia=images&amp;amp;iax=images&amp;amp;iai=http%3A%2F%2Fpluspng.com%2Fimg-png%2Fubs-png-ubs-faculte-ssi-logo-cmjn-2-250.png&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Logiciels Utilisés&lt;/p&gt;
+&lt;p&gt;Pour les diagrammes : Draw IO &amp;amp; Mermaid&lt;/p&gt;
+&lt;p&gt;Pour la programmation&amp;nbsp;: Arduino IDE, VS Code, Invite de Commandes Windows&lt;/p&gt;
+&lt;p&gt;Pour la saisie&amp;nbsp;: Zotero, Obsidian, Word&lt;/p&gt;
+&lt;/div&gt;</rdf:value>
+    </bib:Memo>
+</rdf:RDF>
