@@ -128,7 +128,6 @@ String badgeValide() {
 
     Serial.print("🔹 Badge détecté : ");
     Serial.println(badgeID);
-
     return badgeID;
 }
 
@@ -167,7 +166,7 @@ void loop() {
     verifierConnexion();
 
     String badgeID = badgeValide();
-    if (badgeID != "" && badgeID != dernierBadge) {
+    if (badgeID != "" && badgeID != dernierBadge && badgeID != "REFUS") {
         Serial.println("📤 Envoi de l'UID au serveur MQTT.");
         client.publish(mqtt_topic, badgeID.c_str(), false);
         dernierBadge = badgeID;

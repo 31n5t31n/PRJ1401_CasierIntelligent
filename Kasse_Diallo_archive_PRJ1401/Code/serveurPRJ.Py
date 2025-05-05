@@ -22,9 +22,10 @@ def on_message(client, userdata, msg):
         casier = badges_autorises[badge_recu]
         print(f"✅ Badge autorisé. Ouverture du casier {casier}")
         client.publish(MQTT_TOPIC, f"CASIER:{casier}")
-    elif "CASIER" not in badge_recu:  # S'assure que ce n'est pas une réponse en chaîne
-        print("❌ Accès refusé !")
-        client.publish(MQTT_TOPIC, "REFUS")
+    elif "CASIER" not in badge_recu: 
+        if badge_recu != "REFUS":
+            print("❌ Accès refusé !")
+            client.publish(MQTT_TOPIC, "REFUS")
 
 
 
