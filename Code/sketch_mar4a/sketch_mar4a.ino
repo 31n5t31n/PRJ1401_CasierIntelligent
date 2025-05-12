@@ -39,8 +39,10 @@ void afficherMessage(String ligne1, String ligne2 = "") {
   if (ligne2 != "") {
     display.println(ligne2);
   }
-  display.setCursor(0, 50);
+  display.setCursor(0, 40);
   display.println("Kasse / Diallo");
+  display.setCursor(0, 50);
+  display.println("Casier Intelligent");
   display.display();
 }
 

@@ -5,8 +5,8 @@ MQTT_TOPIC = "casier/ouverture" # le topic sur lequel je veux publier
 
 # Base de donnees integree
 badges_autorises = {
-    "40F1ED56" : "2", # Badge NFC
-    "44F77FA591490" : "1" # Ma carte UBS
+    "4945E8A2D1490" : "2", # Carte MSD
+    "44F77FA591490" : "1" # Carte Semoka
 
 }
 
